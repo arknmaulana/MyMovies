@@ -2,6 +2,7 @@ package id.sch.smktelkom_mlg.privateassignment.xirpl414.mymovies;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources.Theme;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -380,6 +381,24 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.hide();
             GridViewAdapter gridViewAdapter = new GridViewAdapter(getApplicationContext(), movies);
             gv.setAdapter(gridViewAdapter);
+
+            gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Movie movie = movies.get(position);
+                    Intent intent = new Intent(MainActivity.this, MovieDetail.class);
+                    intent.putExtra("poster_path", movie.getPoster_path());
+                    intent.putExtra("backdrop_path", movie.getBackdrop_path());
+                    intent.putExtra("year", movie.getRelease_date());
+                    intent.putExtra("release", movie.getRelease_date());
+                    intent.putExtra("sinopsis", movie.getOverview());
+                    intent.putExtra("title", movie.getTitle());
+                    intent.putExtra("duration", movie.getVote_average());
+                    intent.putExtra("id", movie.getId());
+
+                    startActivity(intent);
+                }
+            });
         }
     }
 }
