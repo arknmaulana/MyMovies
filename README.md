@@ -9,14 +9,18 @@ Angkatan        : 24 <br>
 SMK Telkom Malang <br>
 
 #### Alamat API yang digunakan pada Aplikasi:
-themoviedb.org
+https://www.themoviedb.org/documentation/api
+
 #### Jenis Navigasi yang digunakan pada Aplikasi:
 Action Bar Spinner
+
 #### Library yang digunakan pada Aplikasi:
 Volley, Glide, SQLite
+
 #### Deskripsi Singkat :
 MyMovies merupakan aplikasi yang berfungsi untuk memudahkan seseorang dalam melihat film-film yang sedang tayang maupun film yang akan datang.
 Selain itu, pengguna juga dapat mengetahui film-film terpopuler menurut rating tertinggi suatu film.
+
 #### Kelabihan aplikasi :
 Pada aplikasi ini juga disediakan daftar trailer di setiap detail filmnya, pengguna akan diarahkan ke video trailer film ke YouTube.
 
