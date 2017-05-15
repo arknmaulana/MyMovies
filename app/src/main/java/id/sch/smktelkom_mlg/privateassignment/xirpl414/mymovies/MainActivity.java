@@ -70,11 +70,14 @@ public class MainActivity extends AppCompatActivity {
                         "Highest Rate Movies",
                         "Now Playing Movies",
                         "Upcoming Movies",
+                        "Saved",
                 }));
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Fragment fragments;
+
                 if (position == 0) {
                     FetchMovies fetchMovies = new FetchMovies();
                     String url = "http://api.themoviedb.org/3/movie/popular";
@@ -91,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
                     FetchMovies fetchMovies = new FetchMovies();
                     String url = "http://api.themoviedb.org/3/movie/upcoming";
                     fetchMovies.execute(url);
+                } else if (position == 4) {
+                    //hehe
+                    startActivity(new Intent(MainActivity.this, SavedActivity.class));
                 }
 
                 getSupportFragmentManager().beginTransaction()
